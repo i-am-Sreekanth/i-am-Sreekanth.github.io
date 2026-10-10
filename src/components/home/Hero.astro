@@ -1,0 +1,93 @@
+---
+import { readSiteJson } from "@/utils/json-data";
+import activity from "@/data/activity.json";
+
+const about = await readSiteJson("about.json");
+const [first, ...rest] = about.name.split(" ");
+const last = rest.join(" ");
+const { github: gh, leetcode: lc } = activity as Partial<typeof activity>;
+const stats = [
+  { n: 2, label: "Internships" },
+  { n: 7, label: "Projects built" },
+  { n: lc?.solved?.all ?? 0, label: "LeetCode solved" },
+  { n: gh?.total ?? 0, label: "Commits this year" },
+];
+---
+
+<section
+  data-hero
+  class="relative -mx-[clamp(20px,4vw,36px)] -mt-[clamp(28px,5vw,56px)] mb-16 flex min-h-[min(calc(100svh-70px),860px)] flex-col justify-between overflow-hidden px-[clamp(20px,4vw,36px)] pt-10 pb-10"
+>
+  <div class="hero-grid pointer-events-none absolute inset-0 -z-10"></div>
+  <div
+    data-hero-fade
+    class="text-ink-3 flex items-center justify-between font-mono text-[11px] tracking-[0.2em] uppercase"
+  >
+    <span>Portfolio / 2026</span>
+    <span class="hidden sm:inline">{about.location?.name}</span>
+  </div>
+
+  <div class="relative py-10">
+    <p data-hero-fade class="text-ink-3 mb-6 font-mono text-[12px] tracking-[0.2em] uppercase">
+      Applied AI &nbsp;/&nbsp; NLP &nbsp;/&nbsp; Full-stack
+    </p>
+    <h1 class="m-0 font-serif text-[clamp(44px,10.2vw,150px)] leading-[0.92] font-bold tracking-[-0.045em] text-ink">
+      <span class="block overflow-hidden pb-[0.08em]">
+        <span data-hero-line class="block">
+          {first}
+        </span>
+      </span>
+      <span class="block overflow-hidden pb-[0.08em]">
+        <span data-hero-line class="outline-text block">
+          {last}
+        </span>
+      </span>
+    </h1>
+  </div>
+
+  <div>
+    <div class="grid items-end gap-8 lg:grid-cols-[1fr_auto]">
+      <div>
+        <p
+          data-hero-fade
+          class="text-ink-2 m-0 max-w-[50ch] text-[clamp(16px,1.8vw,20px)] leading-[1.55]"
+        >
+          I turn messy, real-world data into AI systems people can actually trust, from LLM
+          pipelines to the interfaces around them.
+        </p>
+        <div data-hero-fade class="mt-5 flex flex-wrap gap-2">
+          {(about.openTo ?? []).map((t: string) => (
+            <span class="border-rule text-ink-2 inline-flex items-center gap-2 rounded-full border px-3 py-1 font-mono text-[11.5px]">
+              <span class="h-[6px] w-[6px] animate-pulse rounded-full bg-emerald-400"></span>
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div data-hero-fade class="flex flex-wrap gap-3">
+        <a href="/projects" class="btn btn-primary">
+          View my work <span aria-hidden="true">→</span>
+        </a>
+        <a href={about.resume} class="btn btn-ghost" download>
+          Resume ↓
+        </a>
+        <a href={`mailto:${about.email}`} class="btn btn-ghost">
+          Say hello
+        </a>
+      </div>
+    </div>
+
+    <dl data-hero-fade class="border-rule mt-10 grid grid-cols-2 border-t sm:grid-cols-4">
+      {stats.map((s) => (
+        <div class="border-rule border-b py-5 sm:border-b-0 sm:border-r sm:pl-6 sm:first:pl-0 sm:last:border-r-0">
+          <dt class="text-ink font-serif text-[clamp(30px,4vw,44px)] leading-none font-bold">
+            <span data-count={s.n}>{s.n}</span>
+          </dt>
+          <dd class="text-ink-3 m-0 mt-2 font-mono text-[10.5px] tracking-[0.12em] uppercase">
+            {s.label}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+</section>

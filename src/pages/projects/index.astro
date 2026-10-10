@@ -1,16 +1,20 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import ProjectCard from "@/components/projects/ProjectCard";
+import activity from "@/data/activity.json";
 import { readSiteJson } from "@/utils/json-data";
 
 const projects = await readSiteJson<Project[]>("projects.json");
 
-const PROJECT_TYPE_ORDER = ["Research", "Course", "Hobby", "Tool", "Other"];
+const repoMeta = ((activity as Partial<typeof activity>).repos ?? {}) as Record<
+  string,
+  { stars: number; pushed: string }
+>;
+const PROJECT_TYPE_ORDER = ["Work", "Personal", "Hackathon", "Research", "Other"];
 
-const normalized = projects.map((p) => ({
-  ...p,
-  type: (p.type?.trim() || "Other") as string,
-}));
+const normalized = projects
+  .map((p) => ({ ...p, type: (p.type?.trim() || "Other") as string }))
+  .sort((a, b) => Number(!!b.featured) - Number(!!a.featured));
 
 const present = new Set(normalized.map((p) => p.type));
 const filters = ["All", ...PROJECT_TYPE_ORDER.filter((t) => present.has(t))];
@@ -18,14 +22,18 @@ const filters = ["All", ...PROJECT_TYPE_ORDER.filter((t) => present.has(t))];
 
 <Layout
   title="Projects"
-  description="Open-source code I've shipped, contributed to, or maintained — research work, course projects, hobby builds, and small utilities."
+  description="Things I've built — AI and NLP pipelines, internship work and hackathon projects."
   canonicalPath="/projects"
 >
   <div class="space-y-8">
     <header class="mb-8 max-w-[720px]">
       <p class="m-0 mb-1.5 font-mono text-[11px] uppercase tracking-[0.14em] text-ink-3">Code</p>
-      <h1 class="m-0 font-serif text-[clamp(28px,4.5vw,42px)] font-bold leading-[1.05] tracking-[-0.02em] text-ink">Projects</h1>
-      <p class="m-0 mt-3 max-w-[60ch] text-[15px] text-ink-2">Open-source code I've shipped, contributed to, or maintained — research work, course projects, hobby builds, and small utilities.</p>
+      <h1 class="m-0 font-serif text-[clamp(28px,4.5vw,42px)] font-bold leading-[1.05] tracking-[-0.02em] text-ink">
+        Projects
+      </h1>
+      <p class="m-0 mt-3 max-w-[60ch] text-[15px] text-ink-2">
+        Things I've built — AI and NLP pipelines, internship work and hackathon projects.
+      </p>
     </header>
 
     <div>
@@ -36,9 +44,11 @@ const filters = ["All", ...PROJECT_TYPE_ORDER.filter((t) => present.has(t))];
             <button
               type="button"
               data-type-btn={filter}
-              class={filter === "All"
-                ? "rounded border border-ink bg-ink px-3 py-1 text-[11px] font-mono text-bg transition-colors"
-                : "rounded border border-rule bg-bg px-3 py-1 text-[11px] font-mono text-ink-2 transition-colors hover:border-ink-3 hover:text-ink"}
+              class={
+                filter === "All"
+                  ? "rounded border border-ink bg-ink px-3 py-1 text-[11px] font-mono text-bg transition-colors"
+                  : "rounded border border-rule bg-bg px-3 py-1 text-[11px] font-mono text-ink-2 transition-colors hover:border-ink-3 hover:text-ink"
+              }
             >
               {filter}
             </button>
@@ -51,16 +61,27 @@ const filters = ["All", ...PROJECT_TYPE_ORDER.filter((t) => present.has(t))];
 
       <ul
         role="list"
-        class="m-0 grid list-none gap-[14px] p-0 [grid-template-columns:repeat(auto-fill,minmax(290px,1fr))]"
+        class="m-0 grid list-none gap-[14px] p-0 [grid-template-columns:repeat(auto-fill,minmax(290px,1fr))] md:[grid-template-columns:repeat(2,minmax(0,1fr))]"
       >
         {normalized.map((project) => (
-          <li data-project="" data-type={project.type} class="min-w-0">
-            <ProjectCard project={project} />
+          <li
+            data-project=""
+            data-type={project.type}
+            class={`min-w-0 ${project.featured ? "md:col-span-2" : ""}`}
+          >
+            <ProjectCard
+              project={project}
+              meta={project.repo ? repoMeta[project.repo] : undefined}
+            />
           </li>
         ))}
       </ul>
 
-      <div id="projects-empty" hidden class="mt-6 rounded-[10px] border border-dashed border-rule bg-bg-2 p-6 text-center font-serif text-[15px] text-ink-3">
+      <div
+        id="projects-empty"
+        hidden
+        class="mt-6 rounded-[10px] border border-dashed border-rule bg-bg-2 p-6 text-center font-serif text-[15px] text-ink-3"
+      >
         No projects match this type.
       </div>
     </div>

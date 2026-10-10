@@ -82,8 +82,8 @@ export default function CVPage({ cv }: { cv: CVData }) {
               {header.name}
             </h1>
             <a
-              href="/files/mirsazzathossain-cv.pdf"
-              download="mirsazzathossain-cv.pdf"
+              href="/files/Sreekanth_Radhakrishnan_Resume.pdf"
+              download="Sreekanth_Radhakrishnan_Resume.pdf"
               className="border-rule bg-bg text-ink hover:border-link/40 hover:bg-accent-soft hover:text-link mt-1 inline-flex shrink-0 items-center gap-2 self-start rounded-[7px] border px-4 py-[7px] font-mono text-[13px] transition-colors hover:no-underline"
             >
               <DownloadIcon className="h-[14px] w-[14px]" />
@@ -98,7 +98,7 @@ export default function CVPage({ cv }: { cv: CVData }) {
               </a>
             </span>
             <span>
-              <span className="text-ink-2">Google Scholar: </span>
+              <span className="text-ink-2">LinkedIn: </span>
               <a
                 href={header.scholarUrl}
                 target="_blank"
@@ -165,42 +165,50 @@ export default function CVPage({ cv }: { cv: CVData }) {
         )}
 
         {/* Research Experience */}
-        <S title="Research Experience">
-          {cv.research.map((r) => (
-            <Entry key={r.title} title={r.title} date={r.date} sub={r.org} loc={r.location}>
-              <Bullets items={r.bullets} />
-            </Entry>
-          ))}
-        </S>
+        {cv.research.length > 0 && (
+          <S title="Research Experience">
+            {cv.research.map((r) => (
+              <Entry key={r.title} title={r.title} date={r.date} sub={r.org} loc={r.location}>
+                <Bullets items={r.bullets} />
+              </Entry>
+            ))}
+          </S>
+        )}
 
         {/* Publications */}
-        <S title="Publications">
-          {cv.publications.map((p, i) => (
-            <Pub key={i} pub={p} me={header.name} />
-          ))}
-        </S>
+        {cv.publications.length > 0 && (
+          <S title="Publications">
+            {cv.publications.map((p, i) => (
+              <Pub key={i} pub={p} me={header.name} />
+            ))}
+          </S>
+        )}
 
         {/* Under-review */}
-        <S title="Under-review Papers">
-          {cv.underReview.map((p, i) => (
-            <Pub key={i} pub={p} me={header.name} />
-          ))}
-        </S>
+        {cv.underReview.length > 0 && (
+          <S title="Under-review Papers">
+            {cv.underReview.map((p, i) => (
+              <Pub key={i} pub={p} me={header.name} />
+            ))}
+          </S>
+        )}
 
         {/* Teaching */}
-        <S title="Teaching Experience">
-          {cv.teaching.map((t) => (
-            <Entry
-              key={t.title + t.date}
-              title={t.title}
-              date={t.date}
-              sub={t.org}
-              loc={t.location}
-            >
-              <Bullets items={t.bullets} />
-            </Entry>
-          ))}
-        </S>
+        {cv.teaching.length > 0 && (
+          <S title="Teaching Experience">
+            {cv.teaching.map((t) => (
+              <Entry
+                key={t.title + t.date}
+                title={t.title}
+                date={t.date}
+                sub={t.org}
+                loc={t.location}
+              >
+                <Bullets items={t.bullets} />
+              </Entry>
+            ))}
+          </S>
+        )}
 
         {/* Projects */}
         <S title="Selected Projects">
@@ -241,14 +249,18 @@ export default function CVPage({ cv }: { cv: CVData }) {
         </S>
 
         {/* Coursework */}
-        <S title="Relevant Coursework">
-          <p className="text-ink-2 m-0 text-[13px] leading-[1.65]">{cv.coursework}</p>
-        </S>
+        {cv.coursework && (
+          <S title="Relevant Coursework">
+            <p className="text-ink-2 m-0 text-[13px] leading-[1.65]">{cv.coursework}</p>
+          </S>
+        )}
 
         {/* Tests */}
-        <S title="Standardized Tests">
-          <Bullets items={cv.tests.map((t) => `**${t.name}:** ${t.result}`)} />
-        </S>
+        {cv.tests.length > 0 && (
+          <S title="Standardized Tests">
+            <Bullets items={cv.tests.map((t) => `**${t.name}:** ${t.result}`)} />
+          </S>
+        )}
 
         {/* Skills */}
         <S title="Technical Skills">
@@ -256,38 +268,40 @@ export default function CVPage({ cv }: { cv: CVData }) {
         </S>
 
         {/* References */}
-        <S title="References">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {cv.references.map((r) => (
-              <div
-                key={r.name}
-                className="border-rule bg-bg-2 text-ink-2 rounded-lg border p-4 text-[13px] leading-[1.7]"
-              >
-                <p className="text-ink m-0 font-serif text-[15px] font-semibold">{r.name}</p>
-                <p className="text-ink-3 m-0 text-[12.5px] italic">{r.title}</p>
-                <p className="m-0">{r.dept}</p>
-                <p className="m-0">{r.org}</p>
-                <p className="m-0">
-                  Email:{" "}
-                  <a href={`mailto:${r.email}`} className="text-link hover:text-link-hover">
-                    {r.email}
-                  </a>
-                </p>
-                <p className="m-0">
-                  Website:{" "}
-                  <a
-                    href={r.websiteUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-link hover:text-link-hover"
-                  >
-                    {r.website}
-                  </a>
-                </p>
-              </div>
-            ))}
-          </div>
-        </S>
+        {cv.references.length > 0 && (
+          <S title="References">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {cv.references.map((r) => (
+                <div
+                  key={r.name}
+                  className="border-rule bg-bg-2 text-ink-2 rounded-lg border p-4 text-[13px] leading-[1.7]"
+                >
+                  <p className="text-ink m-0 font-serif text-[15px] font-semibold">{r.name}</p>
+                  <p className="text-ink-3 m-0 text-[12.5px] italic">{r.title}</p>
+                  <p className="m-0">{r.dept}</p>
+                  <p className="m-0">{r.org}</p>
+                  <p className="m-0">
+                    Email:{" "}
+                    <a href={`mailto:${r.email}`} className="text-link hover:text-link-hover">
+                      {r.email}
+                    </a>
+                  </p>
+                  <p className="m-0">
+                    Website:{" "}
+                    <a
+                      href={r.websiteUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-link hover:text-link-hover"
+                    >
+                      {r.website}
+                    </a>
+                  </p>
+                </div>
+              ))}
+            </div>
+          </S>
+        )}
       </div>
     </div>
   );

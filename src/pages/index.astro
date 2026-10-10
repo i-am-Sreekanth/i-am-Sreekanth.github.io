@@ -1,32 +1,35 @@
 ---
+import ActivitySection from "@/components/activity/ActivitySection.astro";
+import Contact from "@/components/home/Contact.astro";
+import FeaturedWork from "@/components/home/FeaturedWork.astro";
+import Hero from "@/components/home/Hero.astro";
+import Journey from "@/components/home/Journey.astro";
+import Marquee from "@/components/home/Marquee.astro";
 import { HeroBio, RecentNews } from "@/components/sections/HeroBio";
-import { HomeArticles } from "@/components/sections/HomeArticles";
-import { HomePublications } from "@/components/sections/HomePublications";
 import ProfileSidebar from "@/components/sections/ProfileSidebar";
-import pubBase from "@/data/publications.json";
-import pubOverrides from "@/data/publications.override.json";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import Layout from "@/layouts/Layout.astro";
-import { getSortedPublishedArticles } from "@/utils/articles";
 import { readSiteJson } from "@/utils/json-data";
-import { mergePublicationOverrides, type Publication } from "@/utils/publications";
 
 const about = await readSiteJson("about.json");
 const news = await readSiteJson("news.json");
-const publications = mergePublicationOverrides(
-  pubBase as Publication[],
-  pubOverrides as Partial<Publication>[]
-);
-const articles = await getSortedPublishedArticles();
 ---
 
 <Layout name={about.name}>
-  <section class="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-[clamp(28px,5vw,56px)] mb-12">
+  <Hero />
+  <Marquee />
+  <FeaturedWork />
+  <section class="mb-20 grid grid-cols-1 gap-[clamp(28px,5vw,56px)] lg:grid-cols-[240px_1fr]">
     <ProfileSidebar about={about} />
     <div>
       <HeroBio about={about} />
       <RecentNews news={news} />
-      <HomePublications publications={publications} />
-      <HomeArticles articles={articles} />
     </div>
   </section>
+  <Journey />
+  <section class="mb-20">
+    <SectionHeader title="Activity" />
+    <ActivitySection />
+  </section>
+  <Contact />
 </Layout>

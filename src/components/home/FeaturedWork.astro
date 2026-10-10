@@ -1,0 +1,34 @@
+---
+import ProjectCard from "@/components/projects/ProjectCard";
+import activity from "@/data/activity.json";
+import projects from "@/data/projects.json";
+
+const meta = ((activity as Partial<typeof activity>).repos ?? {}) as Record<
+  string,
+  { stars: number; pushed: string }
+>;
+const featured = (projects as Project[]).filter((p) => p.featured).slice(0, 4);
+---
+
+<section class="mb-20">
+  <div class="mb-6 flex items-end justify-between gap-4">
+    <div>
+      <p class="text-ink-3 m-0 mb-2 font-mono text-[11px] tracking-[0.2em] uppercase">
+        Selected work
+      </p>
+      <h2 class="m-0 font-serif text-[clamp(30px,5vw,52px)] leading-[1.05] font-bold tracking-[-0.03em] text-ink">
+        Things I've built
+      </h2>
+    </div>
+    <a href="/projects" class="btn btn-ghost hidden sm:inline-flex">
+      All projects →
+    </a>
+  </div>
+  <ul class="m-0 grid list-none grid-cols-1 gap-4 p-0 md:grid-cols-2">
+    {featured.map((p) => (
+      <li class="min-w-0">
+        <ProjectCard project={p} meta={p.repo ? meta[p.repo] : undefined} />
+      </li>
+    ))}
+  </ul>
+</section>

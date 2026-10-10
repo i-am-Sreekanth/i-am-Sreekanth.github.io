@@ -1,0 +1,33 @@
+---
+import Heatmap from "./Heatmap.astro";
+import activity from "@/data/activity.json";
+
+const { github: gh, leetcode: lc } = activity as Partial<typeof activity>;
+---
+
+{gh && (
+  <Heatmap
+    title="GitHub contributions"
+    href={`https://github.com/${gh.user}`}
+    summary={`${gh.total} contributions in the last year`}
+    days={gh.days}
+    unit="contribution"
+  />
+)}
+{lc && (
+  <Heatmap
+    title="LeetCode activity"
+    href={`https://leetcode.com/u/${lc.user}`}
+    summary={`${lc.total} submissions in the last year`}
+    days={lc.days}
+    unit="submission"
+    stats={[
+      { label: "solved", value: lc.solved.all },
+      { label: "easy", value: lc.solved.easy },
+      { label: "medium", value: lc.solved.medium },
+      { label: "hard", value: lc.solved.hard },
+      { label: "active days", value: lc.activeDays },
+      { label: "day streak", value: lc.streak },
+    ]}
+  />
+)}

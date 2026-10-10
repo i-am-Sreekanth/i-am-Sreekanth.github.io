@@ -1,214 +1,122 @@
 [
   {
-    "title": "RGC",
-    "type": "Research",
-    "glyph": "🔭",
-    "tags": ["python", "ml"],
-    "stars": 3,
-    "language": "Python",
-    "languageColor": "#3572A5",
-    "description": "A Python package for processing and classifying radio galaxy images. The acronym also pays tribute to Radha Govinda Chandra, a pioneering variable star observer.",
-    "link": {
-      "href": "https://github.com/mirsazzathossain/radio-galaxy-classifier",
-      "label": "radio-galaxy-classifier"
-    },
-    "logo": {
-      "src": "project-logos/radio-galaxy-classifier.png",
-      "alt": "Radio Galaxy Classifier"
-    }
-  },
-  {
-    "title": "Personal Website",
-    "type": "Hobby",
-    "glyph": "🌐",
-    "tags": ["typescript", "astro", "tailwind"],
-    "stars": 289,
+    "title": "SCM Control Tower",
+    "type": "Hackathon",
+    "glyph": "🚚",
+    "repo": "scm-handling",
     "language": "TypeScript",
-    "languageColor": "#3178C6",
-    "description": "Personal academic website built with Astro, React islands, MDX, and Tailwind CSS.",
+    "tags": ["React", "TypeScript", "Vite", "Mock Event Stream"],
+    "description": "Prototype for the 2027 NPN SCM Hackathon: a single shell for live yard, dock and delivery tracking plus an autonomous procure-to-pay flow.",
+    "highlights": [
+      "Every screen runs off one deterministic, seeded event stream, so the six-minute demo plays identically each time.",
+      "Surfaces the source, freshness and confidence of each fact, since WMS, gate, RFID and GPS data rarely agree.",
+      "Typed data layer designed so a real backend and AI services can slot in behind it in v1."
+    ],
+    "featured": true,
     "link": {
-      "href": "https://github.com/mirsazzathossain/mirsazzathossain.me",
-      "label": "mirsazzathossain.me"
-    },
-    "logo": {
-      "src": "project-logos/mirsazzathossain-me.png",
-      "alt": "mirsazzathossain.me"
+      "href": "https://github.com/i-am-Sreekanth/scm-handling",
+      "label": "View on GitHub"
     }
   },
   {
-    "title": "Restaurant USTGCN",
+    "title": "AI Invoice Reconciliation",
+    "type": "Work",
+    "glyph": "🧾",
+    "repo": "",
+    "language": "Python",
+    "tags": ["Python", "Mistral", "Qwen", "Tesseract", "Vector Search", "Ollama"],
+    "description": "A local-LLM pipeline that reads invoices and receipts, matches vendors despite OCR noise, and flags mismatches before exporting an Excel report.",
+    "highlights": [
+      "Resolves vendors using profiles, OCR variants, GSTIN and invoice history.",
+      "Checks quantity, price and GST/CGST fields against ERP records.",
+      "Runs fully on local models, keeping financial documents on-premise."
+    ],
+    "featured": true,
+    "link": {
+      "href": "",
+      "label": "Private / internship work"
+    }
+  },
+  {
+    "title": "Crowd State Analysis",
     "type": "Research",
-    "glyph": "🍔",
-    "tags": ["python", "graph-ml"],
-    "stars": 0,
+    "glyph": "👥",
+    "repo": "ML_YOLO_crowd",
+    "language": "Jupyter Notebook",
+    "tags": ["YOLO11", "Object Tracking", "Computer Vision", "OpenCV"],
+    "description": "Detects and tracks people in video, then classifies the scene as organized flow, dense crowd or chaotic rush, with a hazard overlay.",
+    "highlights": [
+      "Persistent IDs and trajectories feed metrics such as compactness and flow coherence.",
+      "Supports region-of-interest zones and configurable thresholds.",
+      "Outputs an annotated video with boxes, paths and live metrics."
+    ],
+    "featured": true,
+    "link": {
+      "href": "https://github.com/i-am-Sreekanth/ML_YOLO_crowd",
+      "label": "View on GitHub"
+    }
+  },
+  {
+    "title": "Space Station Cargo Planner",
+    "type": "Hackathon",
+    "glyph": "🚀",
+    "repo": "ISRO-Hack",
     "language": "Python",
-    "languageColor": "#3572A5",
-    "description": "Real-time food order prediction using Unified Spatio-Temporal Graph Convolutional Network (USTGCN).",
+    "tags": ["Python", "Octree", "Polars", "Optimization"],
+    "description": "Cargo placement and retrieval algorithms for a space station, built for the National Space Hackathon by IIT Delhi and ISRO (top 10 finalist).",
+    "highlights": [
+      "Octree-based allocation packs items into containers efficiently.",
+      "Indexed search reports where an item sits and what blocks it."
+    ],
+    "featured": true,
     "link": {
-      "href": "https://github.com/mirsazzathossain/ROP-USTGCN",
-      "label": "ROP-USTGCN"
-    },
-    "logo": {
-      "src": "project-logos/burger.png",
-      "alt": "Burger"
+      "href": "https://github.com/i-am-Sreekanth/ISRO-Hack",
+      "label": "View on GitHub"
     }
   },
   {
-    "title": "Astro Labeller",
-    "type": "Research",
-    "glyph": "🛰️",
-    "tags": ["django", "python"],
-    "stars": 1,
-    "language": "Python",
-    "languageColor": "#3572A5",
-    "description": "A Django-based web application for collaborative labelling of astronomical images into different categories.",
+    "title": "PCOS Health Support",
+    "type": "Personal",
+    "glyph": "🩺",
+    "repo": "ML_pcos_health_support",
+    "language": "Jupyter Notebook",
+    "tags": ["Flask", "scikit-learn", "Random Forest", "React"],
+    "description": "A health-support web app: a React front end with a Flask API serving random-forest models that estimate PCOS risk from clinical inputs.",
+    "highlights": [],
+    "featured": false,
     "link": {
-      "href": "https://github.com/mirsazzathossain/astro-labeller",
-      "label": "astro-labeller"
-    },
-    "logo": {
-      "src": "project-logos/astro-labeller.png",
-      "alt": "Astro Labeller"
+      "href": "https://github.com/i-am-Sreekanth/ML_pcos_health_support",
+      "label": "View on GitHub"
     }
   },
   {
-    "title": "Spotify Playing Now",
-    "type": "Hobby",
-    "glyph": "🎵",
-    "tags": ["javascript"],
-    "stars": 2,
-    "language": "JavaScript",
-    "languageColor": "#f1e05a",
-    "description": "A card for showing your currently playing Spotify song on your GitHub profile README or other markdown files.",
-    "link": {
-      "href": "https://github.com/mirsazzathossain/spotify-playing-now",
-      "label": "spotify-playing-now"
-    }
-  },
-  {
-    "title": "Food Judge",
-    "type": "Course",
-    "glyph": "🍽️",
-    "tags": ["django", "web"],
-    "stars": 0,
-    "language": "Python",
-    "languageColor": "#3572A5",
-    "description": "A social media platform for food lovers to discover restaurants, share experiences, and connect with others.",
-    "link": {
-      "href": "https://github.com/mirsazzathossain/food-judge",
-      "label": "food-judge"
-    },
-    "logo": {
-      "src": "project-logos/food-judge.png",
-      "alt": "Food Judge"
-    }
-  },
-  {
-    "title": "SPMS",
-    "type": "Course",
-    "glyph": "🎓",
-    "tags": ["django", "education"],
-    "stars": 0,
-    "language": "Python",
-    "languageColor": "#3572A5",
-    "description": "A Django-based web application for monitoring student performance based on attendance, grades, and other metrics.",
-    "link": {
-      "href": "https://github.com/mirsazzathossain/spms-django",
-      "label": "spms-django"
-    },
-    "logo": {
-      "src": "project-logos/spms.png",
-      "alt": "SPMS"
-    }
-  },
-  {
-    "title": "HAMS",
-    "type": "Course",
-    "glyph": "🏥",
-    "tags": ["laravel", "php"],
-    "stars": 0,
-    "language": "PHP",
-    "languageColor": "#777BB4",
-    "description": "A web application for managing patient records, scheduling doctor appointments, and hospital resources.",
-    "link": {
-      "href": "https://github.com/mirsazzathossain/hams-laravel",
-      "label": "hams-laravel"
-    },
-    "logo": {
-      "src": "project-logos/hams.png",
-      "alt": "HAMS"
-    }
-  },
-  {
-    "title": "Pizza Roma",
-    "type": "Course",
-    "glyph": "🍕",
-    "tags": ["django", "web"],
-    "stars": 0,
-    "language": "Python",
-    "languageColor": "#3572A5",
-    "description": "A website built in Django for a local pizza shop to showcase its menu and take orders online.",
-    "link": {
-      "href": "https://github.com/mirsazzathossain/pizzaroma-django",
-      "label": "pizzaroma-django"
-    },
-    "logo": {
-      "src": "project-logos/pizza-roma.png",
-      "alt": "Pizza Roma"
-    }
-  },
-  {
-    "title": "Bookshop Inventory",
-    "type": "Course",
+    "title": "RAG Study Assistant",
+    "type": "Personal",
     "glyph": "📚",
-    "tags": ["django", "inventory"],
-    "stars": 0,
+    "repo": "ragAI-wr1",
     "language": "Python",
-    "languageColor": "#3572A5",
-    "description": "A Django web application for managing local bookstore inventory and processing online orders.",
+    "tags": ["Streamlit", "RAG", "LLM", "Embeddings"],
+    "description": "A retrieval-augmented study tool that indexes web pages and answers questions, with generated flashcards and quizzes on top.",
+    "highlights": [],
+    "featured": false,
     "link": {
-      "href": "https://github.com/mirsazzathossain/bookshop-django",
-      "label": "bookshop-django"
-    },
-    "logo": {
-      "src": "project-logos/bookstore.png",
-      "alt": "Bookshop"
+      "href": "https://github.com/i-am-Sreekanth/ragAI-wr1",
+      "label": "View on GitHub"
     }
   },
   {
-    "title": "Online Marketplace",
-    "type": "Course",
-    "glyph": "🛒",
-    "tags": ["javascript", "vanilla"],
-    "stars": 0,
-    "language": "JavaScript",
-    "languageColor": "#f1e05a",
-    "description": "An e-commerce marketplace with a shopping cart built using vanilla JavaScript.",
+    "title": "Customer Support NLP",
+    "type": "Personal",
+    "glyph": "💬",
+    "repo": "",
+    "language": "Python",
+    "tags": ["SentenceTransformers", "Cosine Similarity", "Multi-task Learning"],
+    "description": "Embeds support queries into one shared space to match intent, classify requests (multi-class and multi-label) and retrieve the closest reply.",
+    "highlights": [],
+    "featured": false,
     "link": {
-      "href": "https://github.com/mirsazzathossain/online-marketplace",
-      "label": "online-marketplace"
-    },
-    "logo": {
-      "src": "project-logos/online-marketplace.png",
-      "alt": "Online Marketplace"
-    }
-  },
-  {
-    "title": "CSMS",
-    "type": "Course",
-    "glyph": "🚗",
-    "tags": ["php", "web"],
-    "stars": 0,
-    "language": "PHP",
-    "languageColor": "#777BB4",
-    "description": "A web application for managing a car showroom, including inventory, appointments, and related resources.",
-    "link": {
-      "href": "https://github.com/mirsazzathossain/CSMS",
-      "label": "CSMS"
-    },
-    "logo": {
-      "src": "project-logos/CSMS.png",
-      "alt": "CSMS"
+      "href": "",
+      "label": "Private / internship work"
     }
   }
 ]

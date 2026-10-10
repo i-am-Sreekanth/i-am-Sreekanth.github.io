@@ -1,0 +1,143 @@
+---
+interface Day {
+  date: string;
+  count: number;
+  level: number;
+}
+interface Props {
+  title: string;
+  href: string;
+  summary: string;
+  days: Day[];
+  unit: string;
+  stats?: { label: string; value: string | number }[];
+}
+const { title, href, summary, days, unit, stats = [] } = Astro.props;
+
+// Group into weeks (columns) starting on Sunday, padding the first week.
+const weeks: (Day | null)[][] = [];
+let week: (Day | null)[] = [];
+const firstDow = days.length ? new Date(days[0].date + "T00:00:00Z").getUTCDay() : 0;
+for (let i = 0; i < firstDow; i++) week.push(null);
+for (const d of days) {
+  week.push(d);
+  if (week.length === 7) {
+    weeks.push(week);
+    week = [];
+  }
+}
+if (week.length) {
+  while (week.length < 7) week.push(null);
+  weeks.push(week);
+}
+
+const monthLabels = weeks.map((w, i) => {
+  const first = w.find(Boolean);
+  if (!first) return "";
+  const d = new Date(first.date + "T00:00:00Z");
+  const prev = i > 0 ? weeks[i - 1].find(Boolean) : null;
+  const pm = prev ? new Date(prev.date + "T00:00:00Z").getUTCMonth() : -1;
+  return d.getUTCMonth() !== pm ? d.toLocaleString("en", { month: "short", timeZone: "UTC" }) : "";
+});
+---
+
+<div data-spot class="activity border-rule bg-bg mb-6 rounded-[10px] border p-[16px_18px]">
+  <div class="mb-3 flex flex-wrap items-baseline justify-between gap-2">
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      class="text-ink font-serif text-[15px] hover:text-link"
+    >
+      {title}
+    </a>
+    <span class="text-ink-3 font-mono text-[11.5px]">{summary}</span>
+  </div>
+
+  <div class="overflow-x-auto pb-1">
+    <div
+      class="grid w-max gap-[3px]"
+      style={`grid-template-columns: repeat(${weeks.length}, 11px);`}
+    >
+      {monthLabels.map((m) => (
+        <span class="text-ink-3 h-[12px] overflow-visible whitespace-nowrap font-mono text-[9.5px] leading-[12px]">
+          {m}
+        </span>
+      ))}
+    </div>
+    <div class="mt-[3px] flex w-max gap-[3px]">
+      {weeks.map((w) => (
+        <div class="grid gap-[3px]">
+          {w.map((d) =>
+            d ? (
+              <span
+                class={`cell l${d.level}`}
+                title={`${d.count} ${unit}${d.count === 1 ? "" : "s"} on ${d.date}`}
+              />
+            ) : (
+              <span class="cell empty" />
+            ),
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="mt-3 flex flex-wrap items-center justify-between gap-3">
+    <div class="text-ink-3 flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11px]">
+      {stats.map((s) => (
+        <span>
+          <strong class="text-ink-2 font-semibold">{s.value}</strong> {s.label}
+        </span>
+      ))}
+    </div>
+    <div class="text-ink-3 flex items-center gap-[4px] font-mono text-[10.5px]">
+      Less
+      {[0, 1, 2, 3, 4].map((l) => (
+        <span class={`cell l${l}`} />
+      ))}
+      More
+    </div>
+  </div>
+</div>
+
+<style>
+  .activity {
+    --l0: #ececee;
+    --l1: #d4d4d8;
+    --l2: #a1a1aa;
+    --l3: #52525b;
+    --l4: #18181b;
+  }
+  :global(.dark) .activity {
+    --l0: #1a1a1d;
+    --l1: #3f3f46;
+    --l2: #71717a;
+    --l3: #a1a1aa;
+    --l4: #fafafa;
+  }
+  .cell {
+    display: block;
+    width: 11px;
+    height: 11px;
+    border-radius: 2px;
+  }
+  .empty {
+    background: transparent;
+  }
+  .l0 {
+    background: var(--l0);
+  }
+  .l1 {
+    background: var(--l1);
+  }
+  .l2 {
+    background: var(--l2);
+  }
+  .l3 {
+    background: var(--l3);
+  }
+  .l4 {
+    background: var(--l4);
+  }
+</style>

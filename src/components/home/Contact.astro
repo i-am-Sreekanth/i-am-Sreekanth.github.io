@@ -1,0 +1,35 @@
+---
+import { readSiteJson } from "@/utils/json-data";
+const about = await readSiteJson("about.json");
+const gh = about.socialLinks.find((l: { name: string; url: string }) => l.name === "github")?.url;
+const li = about.socialLinks.find((l: { name: string; url: string }) => l.name === "linkedin")?.url;
+---
+
+<section
+  data-spot
+  class="border-rule relative mb-8 overflow-hidden rounded-[22px] border p-[clamp(28px,6vw,64px)] text-center"
+  style="background: var(--grad-soft)"
+>
+  <p class="text-ink-3 m-0 mb-3 font-mono text-[11px] tracking-[0.2em] uppercase">Get in touch</p>
+  <h2 class="m-0 font-serif text-[clamp(34px,7vw,78px)] leading-[1] font-bold tracking-[-0.035em] text-ink">
+    Let's build something <span class="grad-text">worth shipping.</span>
+  </h2>
+  <p class="text-ink-2 mx-auto mt-5 max-w-[48ch] text-[16px]">
+    Open to internships and full-time roles in applied AI, NLP and full-stack engineering.
+  </p>
+  <div class="mt-8 flex flex-wrap justify-center gap-3">
+    <a href={`mailto:${about.email}`} class="btn btn-primary">
+      {about.email}
+    </a>
+    {li && (
+      <a href={li} class="btn btn-ghost" target="_blank" rel="noreferrer">
+        LinkedIn ↗
+      </a>
+    )}
+    {gh && (
+      <a href={gh} class="btn btn-ghost" target="_blank" rel="noreferrer">
+        GitHub ↗
+      </a>
+    )}
+  </div>
+</section>

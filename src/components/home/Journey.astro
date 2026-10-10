@@ -1,0 +1,60 @@
+---
+import { OrgLogo } from "@/components/about/OrgLogo";
+import experiences from "@/data/experiences.json";
+import educations from "@/data/educations.json";
+
+const items = [
+  ...(experiences as typeof experiences).map((e) => ({
+    title: e.title,
+    org: e.company,
+    date: e.date,
+    text: e.description,
+    tags: e.skills ?? [],
+  })),
+  ...(educations as typeof educations).map((e) => ({
+    title: e.degree.split(" - ")[0],
+    org: e.school,
+    date: e.date,
+    text: e.description,
+    tags: [],
+  })),
+];
+---
+
+<section class="mb-20">
+  <p class="text-ink-3 m-0 mb-2 font-mono text-[11px] tracking-[0.2em] uppercase">Journey</p>
+  <h2 class="m-0 mb-8 font-serif text-[clamp(30px,5vw,52px)] leading-[1.05] font-bold tracking-[-0.03em] text-ink">
+    Where I've been
+  </h2>
+  <ol class="relative m-0 list-none p-0 pl-8 md:pl-10">
+    <span class="absolute top-2 bottom-2 left-[11px] w-px bg-gradient-to-b from-zinc-400 via-zinc-600/60 to-transparent md:left-[15px]"></span>
+    {items.map((it) => (
+      <li
+        data-spot
+        class="border-rule bg-bg-2/60 relative mb-5 rounded-[14px] border p-[18px_20px] backdrop-blur-sm"
+      >
+        <span class="absolute top-[26px] -left-[26px] h-[9px] w-[9px] rounded-full bg-zinc-300 shadow-[0_0_0_4px] shadow-zinc-400/20 md:-left-[30px]"></span>
+        <div class="flex items-start gap-3.5">
+          <OrgLogo name={it.org} />
+          <div class="min-w-0 flex-1">
+            <div class="flex flex-wrap items-baseline justify-between gap-x-4">
+              <h3 class="m-0 font-serif text-[18px] font-semibold text-ink">{it.title}</h3>
+              <span class="text-ink-3 font-mono text-[11px]">{it.date}</span>
+            </div>
+            <p class="text-ink-3 m-0 mb-2 text-[13px]">{it.org}</p>
+            <p class="text-ink-2 m-0 text-[13.5px] leading-[1.6]">{it.text}</p>
+            {it.tags.length > 0 && (
+              <div class="mt-3 flex flex-wrap gap-1.5">
+                {it.tags.map((t: string) => (
+                  <span class="border-rule text-ink-2 rounded-full border px-2.5 py-[3px] font-mono text-[10.5px]">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </li>
+    ))}
+  </ol>
+</section>

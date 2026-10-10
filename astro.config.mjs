@@ -1,11 +1,8 @@
-import mdx from "@astrojs/mdx";
-import { satteri } from "@astrojs/markdown-satteri";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import vercel from "@astrojs/vercel";
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
-import { prismPlugin, katexPlugin, externalLinksPlugin } from "./src/lib/satteri-plugins.mjs";
 
 import { readFileSync, readdirSync, writeFileSync } from "fs";
 import { join } from "path";
@@ -66,19 +63,11 @@ function islandModulePreload() {
 }
 
 export default defineConfig({
-  site: "https://mirsazzathossain.me",
+  site: "https://bysreekanth.dev",
 
   output: "static",
   adapter: vercel(),
   compressHTML: true,
-
-  markdown: {
-    processor: satteri({
-      syntaxHighlight: false,
-      features: { math: true },
-      hastPlugins: [prismPlugin, katexPlugin, externalLinksPlugin],
-    }),
-  },
 
   build: {
     inlineStylesheets: "always",
@@ -110,14 +99,5 @@ export default defineConfig({
     },
   },
 
-  integrations: [
-    mdx({
-      syntaxHighlight: false,
-    }),
-    react(),
-    sitemap({
-      filter: (page) => !page.includes("/articles/list"),
-    }),
-    islandModulePreload(),
-  ],
+  integrations: [react(), sitemap(), islandModulePreload()],
 });

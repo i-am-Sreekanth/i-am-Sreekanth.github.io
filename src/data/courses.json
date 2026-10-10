@@ -1,516 +1,86 @@
 [
   {
-    "code": "CSE 100T",
-    "slug": "cse100t",
-    "title": "Tutorial for Computer Programming I",
-    "role": "TA Tutorial",
-    "term": "Summer 2026",
-    "inst": "Independent University, Bangladesh",
-    "lang": "Python",
-    "summary": "A structured tutorial sequence on Python fundamentals, control flow, functions, loops, and list-based problem solving.",
-    "tagline": "Python fundamentals tutorial covering control flow, functions, loops, and list-based problem solving.",
-    "students": 36,
-    "repo": "https://github.com/mirsazzathossain/CSE100T-Tutorial-for-Computer-Programming-I",
+    "code": "PS",
+    "slug": "probability-and-statistics",
+    "title": "Probability and Statistics",
+    "role": "Student",
+    "term": "",
+    "inst": "VIT Vellore",
+    "lang": "",
+    "summary": "Probability theory, distributions and statistical inference.",
+    "tagline": "Probability theory, distributions and statistical inference.",
     "link": {
-      "href": "/courses/cse100t",
-      "label": "View materials"
+      "href": "/courses/probability-and-statistics",
+      "label": "View"
     },
     "logo": {
-      "src": "logos/python.png",
-      "alt": "Python Logo"
+      "src": "logos/vit.jpeg",
+      "alt": "VIT Vellore"
     },
-    "publishedDate": "2026-01-15",
-    "totalDuration": "Approx. 12 weeks",
-    "outcome": "Students can solve beginner Python problems independently using conditionals, loops, functions, and list-processing patterns.",
-    "schedule": [
-      {
-        "week": "Tutorial 01",
-        "topic": "Introduction to Computer Science, and its scopes, opportunities, and future directions"
-      },
-      {
-        "week": "Tutorial 02",
-        "topic": "Numbers system, conversion between number systems, error in numerical representation"
-      },
-      {
-        "week": "Tutorial 03",
-        "topic": "How data (Image, Video, Audio, Text) is represented and stored in a computer"
-      },
-      {
-        "week": "Tutorial 04",
-        "topic": "Variable input, type-casting, and arithmetic workflows"
-      },
-      {
-        "week": "Tutorial 05–06",
-        "topic": "Boolean logic, operators, and nested conditional decision-making"
-      },
-      {
-        "week": "Tutorial 07–08",
-        "topic": "Function decomposition, loops, and core numeric problem patterns"
-      },
-      {
-        "week": "Tutorial 09–10",
-        "topic": "Lists, built-in list methods, and custom list-processing functions"
-      }
-    ],
-    "content": [
-      {
-        "n": "01",
-        "title": "Number systems, data representation, and error in numerical representation",
-        "href": "https://github.com/mirsazzathossain/CSE100T-Tutorial-for-Computer-Programming-I/blob/main/CSE100_Tutorial_01_02.pdf"
-      },
-      {
-        "n": "03",
-        "title": "Numbers and understanding data through structured output"
-      },
-      {
-        "n": "04",
-        "title": "Variable input, type-casting, and arithmetic workflows"
-      },
-      {
-        "n": "05",
-        "title": "Boolean logic and arithmetic operators with truth-table reasoning"
-      },
-      {
-        "n": "06",
-        "title": "Conditional statements, including nested conditionals"
-      },
-      {
-        "n": "07",
-        "title": "Basic function decomposition and extended conditional problem-solving"
-      },
-      {
-        "n": "08",
-        "title": "Loops: numeric series, factorial, prime tests, and Fibonacci"
-      },
-      {
-        "n": "09",
-        "title": "Lists with loops and core list built-in functions"
-      },
-      {
-        "n": "10",
-        "title": "Custom list-processing functions and integrated practice"
-      }
-    ],
-    "resources": [
-      {
-        "title": "Python 3 official documentation",
-        "href": "https://docs.python.org/3/"
-      },
-      {
-        "title": "Think Python (Allen Downey)",
-        "href": "https://greenteapress.com/wp/think-python-2e/"
-      },
-      {
-        "title": "Course GitHub repository",
-        "href": "https://github.com/mirsazzathossain/CSE100T-Tutorial-for-Computer-Programming-I"
-      }
-    ]
+    "publishedDate": "2026-01-01",
+    "totalDuration": ""
   },
   {
-    "code": "CSE 200T",
-    "slug": "cse200t",
-    "title": "Tutorial for Computer Programming II",
-    "role": "TA Tutorial",
-    "term": "Summer 2026",
-    "inst": "Independent University, Bangladesh",
-    "lang": "Python",
-    "summary": "Intermediate Python tutorial covering nested conditionals, loops, functions, recursion, built-in data structures (List, Tuple, Set, Dictionary), modularization, file I/O, exception handling, and object-oriented programming.",
-    "tagline": "Intermediate Python tutorial covering OOP, data structures, recursion, file I/O, and exception handling.",
-    "students": 30,
-    "repo": "https://github.com/mirsazzathossain/CSE200-Tutorial-for-Computer-Programming-II",
+    "code": "DM",
+    "slug": "discrete-mathematics",
+    "title": "Discrete Mathematics",
+    "role": "Student",
+    "term": "",
+    "inst": "VIT Vellore",
+    "lang": "",
+    "summary": "Logic, sets, relations, graphs and combinatorics.",
+    "tagline": "Logic, sets, relations, graphs and combinatorics.",
     "link": {
-      "href": "/courses/cse200t",
-      "label": "View materials"
+      "href": "/courses/discrete-mathematics",
+      "label": "View"
     },
     "logo": {
-      "src": "logos/python.png",
-      "alt": "Python Logo"
+      "src": "logos/vit.jpeg",
+      "alt": "VIT Vellore"
     },
-    "publishedDate": "2026-05-16",
-    "totalDuration": "Approx. 13 weeks",
-    "outcome": "Students can formulate and implement solutions to real-life engineering problems using advanced Python — applying OOP principles (class, object, methods, inheritance, polymorphism), built-in data structures, recursion, exception handling, and file I/O to build comprehensive, well-structured programs.",
-    "schedule": [
-      {
-        "week": "Tutorial 01",
-        "topic": "Conditional statements (nested): if-else, if-elif-else, nested if"
-      },
-      {
-        "week": "Tutorial 02-03",
-        "topic": "Loops (nested): while, for, nested loops, break, continue, pass"
-      },
-      {
-        "week": "Tutorial 04",
-        "topic": "Functions: calls, parameters, scope of variables, generators"
-      },
-      {
-        "week": "Tutorial 05-06",
-        "topic": "Built-in data types: List and 2D List"
-      },
-      {
-        "week": "Tutorial 07",
-        "topic": "Midterm week"
-      },
-      {
-        "week": "Tutorial 08",
-        "topic": "Recursion"
-      },
-      {
-        "week": "Tutorial 09",
-        "topic": "Built-in types: List, Tuple, Set, Dictionary"
-      },
-      {
-        "week": "Tutorial 10",
-        "topic": "Modularization and introduction to pygame"
-      },
-      {
-        "week": "Tutorial 11",
-        "topic": "Exception handling: try-catch"
-      },
-      {
-        "week": "Tutorial 12",
-        "topic": "Files (File I/O) — text mode"
-      },
-      {
-        "week": "Tutorial 13",
-        "topic": "Python — Class, Object, attributes, methods"
-      },
-      {
-        "week": "Tutorial 14",
-        "topic": "Review"
-      }
-    ],
-    "content": [
-      {
-        "n": "01",
-        "title": "Conditional statements (nested)",
-        "href": "https://github.com/mirsazzathossain/CSE200-Tutorial-for-Computer-Programming-II/blob/main/CSE200_Tutorial_01.ipynb"
-      },
-      {
-        "n": "02",
-        "title": "Loops (nested)",
-        "href": "https://github.com/mirsazzathossain/CSE200-Tutorial-for-Computer-Programming-II/blob/main/CSE200_Tutorial_02_03.ipynb"
-      },
-      {
-        "n": "03",
-        "title": "Functions: parameters, scope, generators"
-      },
-      {
-        "n": "04",
-        "title": "Built-in data types: List and 2D List"
-      },
-      {
-        "n": "05",
-        "title": "Recursion"
-      },
-      {
-        "n": "06",
-        "title": "Built-in types: Tuple, Set, Dictionary"
-      },
-      {
-        "n": "07",
-        "title": "Modularization and pygame"
-      },
-      {
-        "n": "08",
-        "title": "Exception handling"
-      },
-      {
-        "n": "09",
-        "title": "File I/O — text mode"
-      },
-      {
-        "n": "10",
-        "title": "Object-oriented programming: Class and Object"
-      }
-    ],
-    "resources": [
-      {
-        "title": "Python Crash Course, 2nd Edition — Eric Matthes",
-        "href": "https://nostarch.com/pythoncrashcourse2e"
-      },
-      {
-        "title": "Learning Python, 5th Edition — Mark Lutz",
-        "href": "https://www.oreilly.com/library/view/learning-python-5th/9781449355722/"
-      },
-      {
-        "title": "Automate the Boring Stuff with Python, 2nd Edition — Al Sweigart",
-        "href": "https://automatetheboringstuff.com/"
-      }
-    ]
+    "publishedDate": "2026-01-01",
+    "totalDuration": ""
   },
   {
-    "code": "CSE 203T",
-    "slug": "cse203t",
-    "title": "Tutorial for Data Structure",
-    "role": "TA Tutorial",
-    "term": "Summer 2026",
-    "inst": "Independent University, Bangladesh",
-    "lang": "Python",
-    "summary": "Tutorial sessions on data representation and storage using elementary data structures — arrays, linked lists, stacks, queues, trees, heaps, and graphs — with implementation and problem solving in Python.",
-    "tagline": "Data structures tutorial covering linked lists, stacks, queues, trees, heaps, and graphs in Python.",
-    "students": 30,
-    "repo": "https://github.com/mirsazzathossain/CSC203-Tutorial-for-Data-Structure",
+    "code": "DSA",
+    "slug": "data-structures-and-algorithms",
+    "title": "Data Structures and Algorithms",
+    "role": "Student",
+    "term": "",
+    "inst": "VIT Vellore",
+    "lang": "Python / C",
+    "summary": "Core data structures and algorithm design, practised on LeetCode.",
+    "tagline": "Core data structures and algorithm design, practised on LeetCode.",
     "link": {
-      "href": "/courses/cse203t",
-      "label": "View materials"
+      "href": "/courses/data-structures-and-algorithms",
+      "label": "View"
     },
     "logo": {
-      "src": "logos/python.png",
-      "alt": "Python Logo"
+      "src": "logos/vit.jpeg",
+      "alt": "VIT Vellore"
     },
-    "publishedDate": "2026-05-16",
-    "totalDuration": "Approx. 13 weeks",
-    "outcome": "Students can implement and use core data structures (linked lists, stacks, queues, BSTs, heaps, graphs, hash tables), analyze time/space complexity, apply recursion to algorithmic problem solving, and select appropriate data structures for engineering problems.",
-    "schedule": [
-      {
-        "week": "Tutorial 01",
-        "topic": "Python review: loops, conditionals, functions, lists, tuples, sets, dicts, classes"
-      },
-      {
-        "week": "Tutorial 02",
-        "topic": "Pointers, nodes, and singly linked list"
-      },
-      {
-        "week": "Tutorial 03",
-        "topic": "Stack and queue using linked list"
-      },
-      {
-        "week": "Tutorial 04",
-        "topic": "Doubly linked list"
-      },
-      {
-        "week": "Tutorial 05",
-        "topic": "Recursion"
-      },
-      {
-        "week": "Tutorial 06",
-        "topic": "Midterm Exam week"
-      },
-      {
-        "week": "Tutorial 07",
-        "topic": "Recursion continued"
-      },
-      {
-        "week": "Tutorial 08",
-        "topic": "Binary search tree — operations and complexity"
-      },
-      {
-        "week": "Tutorial 09",
-        "topic": "Binary search tree — traversal and applications"
-      },
-      {
-        "week": "Tutorial 10",
-        "topic": "Heap and priority queue"
-      },
-      {
-        "week": "Tutorial 11",
-        "topic": "Heap and priority queue — applications"
-      },
-      {
-        "week": "Tutorial 12",
-        "topic": "Graph: directed, undirected, connectivity"
-      },
-      {
-        "week": "Tutorial 13",
-        "topic": "Review and exam preparation"
-      }
-    ],
-    "content": [
-      {
-        "n": "01",
-        "title": "Python review: data types, control flow, functions, OOP",
-        "href": "https://github.com/mirsazzathossain/CSC203-Tutorial-for-Data-Structure/blob/main/CSC203_Tutorial_01.ipynb"
-      },
-      {
-        "n": "02",
-        "title": "Pointers, nodes, and singly linked list",
-        "href": "https://github.com/mirsazzathossain/CSC203-Tutorial-for-Data-Structure/blob/main/CSC203_Tutorial_02.ipynb"
-      },
-      {
-        "n": "03",
-        "title": "Stack and queue using linked list"
-      },
-      {
-        "n": "04",
-        "title": "Doubly linked list implementation"
-      },
-      {
-        "n": "05",
-        "title": "Recursion: base cases, call stack, and recursive problem solving"
-      },
-      {
-        "n": "06",
-        "title": "Binary search tree: insertion, deletion, search"
-      },
-      {
-        "n": "07",
-        "title": "Heap and priority queue"
-      },
-      {
-        "n": "08",
-        "title": "Graph: representation, BFS, and DFS"
-      }
-    ],
-    "resources": [
-      {
-        "title": "Problem Solving with Algorithms and Data Structures using Python — Miller & Ranum",
-        "href": "https://runestone.academy/runestone/books/published/pythonds/index.html"
-      },
-      {
-        "title": "Python Data Structures and Algorithms — Benjamin Baka",
-        "href": "https://www.packtpub.com/product/python-data-structures-and-algorithms/9781786467355"
-      },
-      {
-        "title": "Data Structures and Algorithms in Python — Goodrich, Tamassia & Goldwasser",
-        "href": "https://www.wiley.com/en-us/Data+Structures+and+Algorithms+in+Python-p-9781118290279"
-      }
-    ]
+    "publishedDate": "2026-01-01",
+    "totalDuration": ""
   },
   {
-    "code": "CIS 101T",
-    "slug": "cis101t",
-    "title": "Fundamentals of Computer Systems",
-    "role": "TA Tutorial",
-    "term": "Spring 2023",
-    "inst": "Independent University, Bangladesh",
-    "lang": "Office",
-    "summary": "Tutorial sessions covering computer-system concepts and practical office-suite skills for academic and professional use.",
-    "tagline": "Tutorial on computer-system concepts and practical Microsoft Office skills for academic use.",
-    "students": 38,
-    "repo": "#",
-    "link": {
-      "href": "/courses/cis101t",
-      "label": "View materials"
-    },
-    "logo": {
-      "src": "logos/office.png",
-      "alt": "Office Logo"
-    },
-    "publishedDate": "2023-01-23",
-    "totalDuration": "Approx. 12 weeks",
-    "outcome": "Students understand fundamental computing concepts and can use office productivity tools effectively for academic reporting and presentations.",
-    "schedule": [
-      {
-        "week": "Week 01–02",
-        "topic": "Computer hardware and software basics"
-      },
-      {
-        "week": "Week 03–04",
-        "topic": "Operating systems and file management"
-      },
-      {
-        "week": "Week 05–06",
-        "topic": "Microsoft Word: formatting and document design"
-      },
-      {
-        "week": "Week 07–08",
-        "topic": "Microsoft Excel: formulas, charts, and data analysis"
-      },
-      {
-        "week": "Week 09–10",
-        "topic": "Microsoft PowerPoint: presentations and design"
-      },
-      {
-        "week": "Week 11–12",
-        "topic": "Integrated project"
-      }
-    ],
-    "content": [],
-    "resources": [
-      {
-        "title": "Microsoft Office Support Documentation",
-        "href": "https://support.microsoft.com/en-us/office"
-      }
-    ]
-  },
-  {
-    "code": "CSE 317",
-    "slug": "cse317",
-    "title": "Numerical Methods Lab",
-    "role": "TA Lab",
-    "term": "Autumn 2022",
-    "inst": "Independent University, Bangladesh",
+    "code": "IBM",
+    "slug": "ibm-generative-ai-engineering",
+    "title": "IBM Generative AI Engineering",
+    "role": "Certification",
+    "term": "",
+    "inst": "IBM",
     "lang": "Python",
-    "summary": "Lab worksheets and assignments for numerical methods — root-finding, interpolation, numerical integration, and ODEs — implemented in Python.",
-    "tagline": "Numerical methods lab covering root-finding, interpolation, integration, and ODEs in Python.",
-    "students": 28,
-    "repo": "https://github.com/mirsazzathossain/CSE317-Lab-Numerical-Methods",
+    "summary": "Generative AI and LLM engineering, completed as an IBM certification.",
+    "tagline": "Generative AI and LLM engineering, completed as an IBM certification.",
     "link": {
-      "href": "/courses/cse317",
-      "label": "View materials"
+      "href": "/courses/ibm-generative-ai-engineering",
+      "label": "View"
     },
     "logo": {
-      "src": "logos/python.png",
-      "alt": "Python Logo"
+      "src": "placeholder.svg",
+      "alt": "IBM Generative AI Engineering"
     },
-    "publishedDate": "2022-07-20",
-    "totalDuration": "Approx. 12 weeks",
-    "outcome": "Students can implement and analyze core numerical methods, understand their error characteristics, and apply them to scientific computing problems.",
-    "schedule": [
-      {
-        "week": "Lab 01–02",
-        "topic": "Floating point arithmetic and error analysis"
-      },
-      {
-        "week": "Lab 03–04",
-        "topic": "Root-finding: bisection, Newton-Raphson"
-      },
-      {
-        "week": "Lab 05–06",
-        "topic": "Polynomial interpolation and splines"
-      },
-      {
-        "week": "Lab 07–08",
-        "topic": "Numerical differentiation and integration"
-      },
-      {
-        "week": "Lab 09–10",
-        "topic": "Linear systems: Gaussian elimination and LU factorization"
-      },
-      {
-        "week": "Lab 11–12",
-        "topic": "Ordinary differential equations: Euler and Runge-Kutta"
-      }
-    ],
-    "content": [
-      {
-        "n": "01",
-        "title": "Floating point and machine epsilon"
-      },
-      {
-        "n": "02",
-        "title": "Root-finding methods"
-      },
-      {
-        "n": "03",
-        "title": "Lagrange and Newton interpolation"
-      },
-      {
-        "n": "04",
-        "title": "Numerical integration: trapezoidal and Simpson's rule"
-      },
-      {
-        "n": "05",
-        "title": "Solving linear systems"
-      },
-      {
-        "n": "06",
-        "title": "ODE solvers: Euler and RK4"
-      }
-    ],
-    "resources": [
-      {
-        "title": "Numerical Methods for Engineers — Chapra & Canale",
-        "href": "https://www.mheducation.com/highered/product/numerical-methods-engineers-chapra-canale/M9780073397924.html"
-      },
-      {
-        "title": "SciPy documentation",
-        "href": "https://docs.scipy.org/doc/scipy/"
-      },
-      {
-        "title": "Course GitHub repository",
-        "href": "https://github.com/mirsazzathossain/CSE317-Lab-Numerical-Methods"
-      }
-    ]
+    "publishedDate": "2026-01-01",
+    "totalDuration": ""
   }
 ]

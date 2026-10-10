@@ -3,8 +3,7 @@ import { getTagInfoFromKind, stripEmoji } from "@/utils/about";
 import type { About } from "@/components/about/types";
 
 export function HeroBio({ about }: { about: About }) {
-  // Take just the first paragraph of the bio for the hero section
-  const shortBio = about.description.split("\n\n")[0];
+  const shortBio = about.shortBio || about.description.split("\n\n")[0];
 
   return (
     <div className="mb-8">
@@ -19,12 +18,13 @@ export function HeroBio({ about }: { about: About }) {
 export function RecentNews({
   news,
 }: {
-  news: Array<{ year: number; items: Array<{ kind: string; text: string }> }>;
+  news: Array<{ year: number; items: Array<{ kind: string; title?: string; text: string }> }>;
 }) {
   // Flatten timeline items and take top 5
   const flattenedEvents: Array<{
     year: number;
     kind: string;
+    title?: string;
     text: string;
   }> = [];
 
@@ -34,7 +34,7 @@ export function RecentNews({
     });
   });
 
-  const topEvents = flattenedEvents.slice(0, 5);
+  const topEvents = flattenedEvents.slice(0, 6);
 
   return (
     <div className="mb-10">
@@ -45,15 +45,26 @@ export function RecentNews({
           return (
             <li
               key={i}
-              className="border-rule grid grid-cols-[50px_60px_1fr] items-baseline gap-3 border-b border-dashed py-2 text-[13.5px] last:border-0 md:grid-cols-[78px_60px_1fr]"
+              className="border-rule grid grid-cols-[50px_1fr] items-baseline gap-x-3 gap-y-1 border-b border-dashed py-3 last:border-0 md:grid-cols-[78px_1fr]"
             >
               <span className="text-ink-3 font-mono text-[11px] tracking-[0.02em]">{n.year}</span>
-              <span
-                className={`justify-self-start rounded-[3px] px-[6px] py-[2px] text-center font-mono text-[9.5px] font-semibold tracking-[0.08em] uppercase ${tagInfo.className}`}
-              >
-                {tagInfo.label}
-              </span>
-              <span className="text-ink-2">{stripEmoji(n.text)}</span>
+              <div className="min-w-0">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-ink font-serif text-[15px] leading-snug font-semibold">
+                    {stripEmoji(n.title ?? n.text)}
+                  </span>
+                  <span
+                    className={`rounded-[3px] px-[6px] py-[2px] text-center font-mono text-[9.5px] font-semibold tracking-[0.08em] uppercase ${tagInfo.className}`}
+                  >
+                    {tagInfo.label}
+                  </span>
+                </div>
+                {n.title && (
+                  <p className="text-ink-2 m-0 mt-1 text-[13.5px] leading-[1.55]">
+                    {stripEmoji(n.text)}
+                  </p>
+                )}
+              </div>
             </li>
           );
         })}

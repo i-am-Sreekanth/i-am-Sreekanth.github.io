@@ -1,60 +1,41 @@
 [
   {
-    "title": "ML Engineer",
-    "company": "Penta Global Limited",
-    "companyURL": "https://www.pentabd.com/",
-    "companyLogo": "/images/logos/penta-global.png",
-    "location": "Dhaka, Bangladesh",
-    "type": "Part-time",
-    "date": "Aug 2025 - Present",
+    "title": "Applied AI Engineer Intern",
+    "company": "Xmplar Management Solution",
+    "companyURL": "",
+    "location": "Bengaluru, Karnataka",
+    "type": "Internship",
+    "date": "May 2026 - Jul 2026",
     "category": "industry",
-    "description": "Integrated conversational AI into Autodesk Revit. Developed machine learning pipelines for automated BIM model generation from 2D floor plans.",
-    "skills": ["Conversational AI", "ML Pipelines", "NLP"]
-  },
-  {
-    "title": "Post-baccalaureate Research Assistant",
-    "company": "Center for Computational & Data Sciences",
-    "companyURL": "http://ccds.ai/",
-    "companyLogo": "/images/logos/ccds.png",
-    "location": "Plot 16, Aftabuddin Ahmed Road, Block B, Bashnudhara RA, Dhaka 1229, Bangladesh.",
-    "type": "Full-time",
-    "date": "Feb 2022 - Present",
-    "category": "research",
-    "description": "Conducting research in multimodal learning, domain adaptation, and vision-language models. Published research articles in top-tier venues such as ACL and WACV. Conduct tutorial classes at IUB and mentor undergraduate thesis projects.",
+    "description": "Built tooling that helps finance teams reconcile records spread across ERP exports and spreadsheets. Combined semantic matching and LLM inference with deterministic checks, inferred schemas from unfamiliar files, and produced KPI summaries and Excel reports automatically.",
     "skills": [
-      "Multimodal Learning",
-      "Domain Adaptation",
-      "Vision-Language Models",
-      "Mentorship"
+      "Python",
+      "LLM Inference",
+      "Semantic Similarity",
+      "FastAPI",
+      "Pandas",
+      "OpenPyXL",
+      "Git"
     ]
   },
   {
-    "title": "Post-baccalaureate Teaching Assistant",
-    "company": "Independent University, Bangladesh",
-    "companyURL": "https://iub.edu.bd/",
-    "companyLogo": "/images/logos/iub.png",
-    "location": "Plot 16, Aftabuddin Ahmed Road, Block B, Bashnudhara RA, Dhaka 1229, Bangladesh.",
-    "type": "Part-time",
-    "date": "May 2021 - Jan 2022",
-    "category": "teaching",
-    "description": "Worked as a Teaching Assistant under Dr. AKM Mahbubur Rahman for a lab course on Numerical Methods. Redesigned all lab materials from MATLAB to Python. Assisted students with their queries during lab sessions.",
-    "skills": ["Numerical Methods", "Numpy", "Teaching"]
-  },
-  {
-    "title": "Undergraduate Teaching Assistant",
-    "company": "Independent University, Bangladesh",
-    "companyURL": "https://iub.edu.bd/",
-    "companyLogo": "/images/logos/iub.png",
-    "location": "Plot 16, Aftabuddin Ahmed Road, Block B, Bashnudhara RA, Dhaka 1229, Bangladesh.",
-    "type": "Part-time",
-    "date": "Oct 2019 - Apr 2021",
-    "category": "teaching",
-    "description": "Worked part-time at the Math Tutorial Center, supporting students with math difficulties. Provided one-on-one tutoring and helped manage the center to ensure effective support.",
+    "title": "Full Stack Intern",
+    "company": "Adiyen Technologies",
+    "companyURL": "",
+    "location": "Bengaluru, Karnataka",
+    "type": "Internship",
+    "date": "May 2025 - Jul 2025",
+    "category": "industry",
+    "description": "Created reusable Angular 17 and TypeScript components for data-heavy interfaces, kept multiple clients in sync in real time with WebSockets and RxJS, and wired up AWS Lambda, API Gateway and an Amplify and CodePipeline deployment flow.",
     "skills": [
-      "Linear Algebra",
-      "Statistics",
-      "Differential Equations",
-      "Vector Calculus"
+      "Angular 17",
+      "TypeScript",
+      "WebSockets",
+      "RxJS",
+      "AWS Lambda",
+      "API Gateway",
+      "Amplify",
+      "CodePipeline"
     ]
   }
 ]

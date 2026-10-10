@@ -3,15 +3,17 @@ export type About = {
   designation: string;
   company: {
     name: string;
-    url: string;
+    url?: string;
     department?: { name: string; url: string };
   };
   description: string;
+  shortBio?: string;
   location?: { name: string; url: string };
   email?: string;
   photo?: string;
-  availability?: string;
-  researchInterests?: string[];
+  openTo?: string[];
+  academicInterests?: string[];
+  interests?: string[];
   academicLinks?: { name: string; url: string }[];
   socialLinks: { name: string; url: string; username?: string }[];
   resume: string;
@@ -19,7 +21,7 @@ export type About = {
 
 export type Education = {
   school: string;
-  schoolURL: string;
+  schoolURL?: string;
   degree: string;
   major: string;
   minor?: string;
@@ -31,7 +33,7 @@ export type Education = {
 export type Experience = {
   title: string;
   company: string;
-  companyURL: string;
+  companyURL?: string;
   type: string;
   date: string;
   category: "research" | "industry" | "teaching";
@@ -91,10 +93,11 @@ export type Availability = {
 
 export type TimelineYear = {
   year: number;
-  items: { kind: string; text: string }[];
+  items: { kind: string; title?: string; text: string }[];
 };
 
 export type AboutPageProps = {
+  children?: React.ReactNode;
   about: About;
   educations: Education[];
   experiences: Experience[];

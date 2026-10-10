@@ -1,14 +1,14 @@
 import { getHostnameLabel } from "@/utils/url";
 
 const LANGUAGE_DOT_CLASSES: Record<string, string> = {
-  python: "bg-blue-700",
-  typescript: "bg-blue-600",
-  javascript: "bg-yellow-400",
-  php: "bg-indigo-400",
+  python: "bg-zinc-300",
+  typescript: "bg-zinc-400",
+  javascript: "bg-zinc-500",
+  "jupyter notebook": "bg-zinc-600",
 };
 
 export function getProjectLanguageDotClass(language: string | undefined): string {
-  return LANGUAGE_DOT_CLASSES[(language || "").toLowerCase()] || "bg-slate-400";
+  return LANGUAGE_DOT_CLASSES[(language || "").toLowerCase()] || "bg-zinc-400";
 }
 
 export type ProjectLinkMeta = {

@@ -34,3 +34,19 @@ out/
 .codex/
 .agents/
 design-to-be/
+
+# Python
+__pycache__/
+*.pyc
+
+# Env variants (keep the template)
+.env.*
+!.env.example
+
+# OS / editor / tooling
+Thumbs.db
+.idea/
+*.log
+coverage/
+.eslintcache
+.prettiercache

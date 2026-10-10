@@ -1,19 +1,11 @@
 [
   {
-    "school": "Independent University, Bangladesh",
-    "schoolURL": "https://iub.edu.bd/",
-    "schoolLogo": "/images/iub.png",
-    "schoolLocation": "Plot 16, Aftabuddin Ahmed Road, Block B, Bashnudhara RA, Dhaka 1229, Bangladesh.",
-    "degree": "Bachelor of Science - BS",
-    "major": "Computer Science and Engineering",
-    "minor": "Engineering Mathematics",
-    "date": "2017 - 2021",
-    "description": "Completed my undergraduate studies with a CGPA of 3.64 (Math & CS: 3.81). Participated in extracurricular activities such as hackathons, olympiads, and programming contests. Notably, I have represented IUB in the ICPC Asia Dhaka Regional competition in 2019.",
-    "activitiesandsocieties": [
-      "Competitive Programming",
-      "JUKTI - Club of CSE IUB",
-      "IEEE Computer Society IUB Student Branch Chapter",
-      "IUB ACM Student Chapter"
-    ]
+    "school": "VIT Vellore",
+    "schoolURL": "https://vit.ac.in/",
+    "schoolLocation": "Vellore, Tamil Nadu, India",
+    "degree": "Bachelor of Technology - B.Tech",
+    "major": "Computer and Business Systems",
+    "date": "2023 - 2027",
+    "description": "Studying computer science alongside business systems, with a core grounding in Data Structures, AI, Machine learning, Probablity and Statistics."
   }
 ]

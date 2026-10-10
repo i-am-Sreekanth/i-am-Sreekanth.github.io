@@ -1,48 +1,8 @@
 {
-  "tz": "Asia/Dhaka · UTC+6",
-  "rangeLabel": "Oct 5 – 11, 2026",
-  "days": [
-    "Mon",
-    "Tue",
-    "Wed",
-    "Thu",
-    "Fri",
-    "Sat",
-    "Sun"
-  ],
-  "dates": [
-    "Oct 5",
-    "Oct 6",
-    "Oct 7",
-    "Oct 8",
-    "Oct 9",
-    "Oct 10",
-    "Oct 11"
-  ],
-  "hours": [
-    "8am",
-    "9am",
-    "10am",
-    "11am",
-    "12pm",
-    "1pm",
-    "2pm",
-    "3pm",
-    "9pm",
-    "10pm",
-    "11pm"
-  ],
-  "grid": [
-    "fffffff",
-    "fffffff",
-    "fffbfff",
-    "bfbbbbf",
-    "bffffbf",
-    "ffbffff",
-    "ffbffff",
-    "fffffff",
-    "fffffff",
-    "fffffff",
-    "fffffff"
-  ]
+  "tz": "",
+  "rangeLabel": "",
+  "days": [],
+  "dates": [],
+  "hours": [],
+  "grid": []
 }

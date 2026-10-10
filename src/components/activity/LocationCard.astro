@@ -1,0 +1,35 @@
+---
+interface Props {
+  name: string;
+  url?: string;
+  lat: number;
+  lon: number;
+}
+const { name, url, lat, lon } = Astro.props;
+const d = 0.12;
+const bbox = `${lon - d},${lat - d * 0.6},${lon + d},${lat + d * 0.6}`;
+const src = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lon}`;
+---
+
+<div class="border-rule bg-bg mb-6 overflow-hidden rounded-[10px] border">
+  <iframe
+    src={src}
+    title={`Map of ${name}`}
+    loading="lazy"
+    class="block h-[220px] w-full border-0"
+    referrerpolicy="no-referrer"
+  ></iframe>
+  <div class="flex items-center justify-between gap-3 p-[10px_16px]">
+    <span class="text-ink font-serif text-[14px]">📍 {name}</span>
+    {url && (
+      <a
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        class="text-link font-mono text-[11.5px] hover:underline"
+      >
+        Open in Maps →
+      </a>
+    )}
+  </div>
+</div>

@@ -1,36 +1,25 @@
-export type LogoInfo =
-  | { kind: "img"; src: string; alt: string }
-  | { kind: "text"; label: string };
+export type LogoInfo = { kind: "img"; src: string; alt: string } | { kind: "text"; label: string };
 
 export function getOrgLogo(name: string): LogoInfo {
-  if (name.includes("CCDS") || name.includes("Center for Computational")) {
-    return { kind: "img", src: "/images/logos/ccds.png", alt: "CCDS" };
+  const n = name.toLowerCase();
+  if (n.includes("vit") || n.includes("vellore")) {
+    return { kind: "img", src: "/images/logos/vit.jpeg", alt: "VIT Vellore" };
   }
-  if (name.includes("IUB") || name.includes("Independent University")) {
-    return { kind: "img", src: "/images/logos/iub.png", alt: "IUB" };
+  if (n.includes("xmplar")) {
+    return { kind: "img", src: "/images/logos/xmplar.jpeg", alt: "Xmplar" };
   }
-  if (name.includes("Postex") || name.includes("Penta")) {
-    return {
-      kind: "img",
-      src: "/images/logos/penta-global.png",
-      alt: "Penta Global",
-    };
+  if (n.includes("adiyen")) {
+    return { kind: "img", src: "/images/logos/adiyen.jpeg", alt: "Adiyen Technologies" };
   }
 
   const words = name.trim().split(/\s+/);
   const label =
-    words.length >= 2
-      ? (words[0][0] + words[1][0]).toUpperCase()
-      : name.slice(0, 3).toUpperCase();
+    words.length >= 2 ? (words[0][0] + words[1][0]).toUpperCase() : name.slice(0, 3).toUpperCase();
 
   return { kind: "text", label };
 }
 
-export function formatDegree(
-  degree: string,
-  major: string,
-  minor?: string,
-): string {
+export function formatDegree(degree: string, major: string, minor?: string): string {
   const [full, abbr] = degree.split(" - ");
   const base = abbr ? `${full} · ${abbr} in ${major}` : `${full} in ${major}`;
 
@@ -51,21 +40,18 @@ export function getSocialLink(
 }
 
 export function getTalkTypeClass(type: string): string {
-  if (type === "oral") return "bg-accent-soft text-link";
-  if (type === "poster")
-    return "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300";
-  if (type === "workshop")
-    return "bg-pink-50 text-pink-800 dark:bg-pink-950 dark:text-pink-300";
+  if (type === "oral") return "bg-bg-3 text-ink-2";
+  if (type === "poster") return "bg-bg-3 text-ink-2";
+  if (type === "workshop") return "bg-bg-3 text-ink-2";
   return "bg-bg-2 text-ink-3";
 }
 
 export function getTimelineKindClass(kind: string): string {
-  if (kind === "paper") return "bg-accent-soft text-link";
-  if (kind === "award")
-    return "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300";
-  if (kind === "career")
-    return "bg-emerald-50 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300";
-  return "bg-slate-100 text-ink-2 dark:bg-bg-3";
+  if (kind === "paper") return "bg-bg-3 text-ink-2";
+  if (kind === "award") return "bg-bg-3 text-ink-2";
+  if (kind === "project") return "bg-bg-3 text-ink-2";
+  if (kind === "career") return "bg-bg-3 text-ink-2";
+  return "bg-bg-3 text-ink-2";
 }
 
 export function getTagInfoFromKind(kind: string): {
@@ -74,24 +60,26 @@ export function getTagInfoFromKind(kind: string): {
 } {
   switch (kind) {
     case "paper":
-      return { label: "paper", className: "bg-accent-soft text-link" };
+      return { label: "paper", className: "bg-bg-3 text-ink-2" };
     case "award":
       return {
         label: "award",
-        className:
-          "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300",
+        className: "bg-bg-3 text-ink-2",
       };
     case "career":
       return {
         label: "career",
-        className:
-          "bg-emerald-50 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300",
+        className: "bg-bg-3 text-ink-2",
+      };
+    case "project":
+      return {
+        label: "project",
+        className: "bg-bg-3 text-ink-2",
       };
     case "talk":
       return {
         label: "talk",
-        className:
-          "bg-pink-50 text-pink-800 dark:bg-pink-950 dark:text-pink-300",
+        className: "bg-bg-3 text-ink-2",
       };
     default:
       return { label: "milestone", className: "bg-bg-3 text-ink-2" };
@@ -104,26 +92,23 @@ export function getNewsTagFromTitle(title: string): {
 } {
   const lower = title.toLowerCase();
 
-  if (lower.includes("paper"))
-    return { label: "paper", className: "bg-accent-soft text-link" };
+  if (lower.includes("paper")) return { label: "paper", className: "bg-bg-3 text-ink-2" };
   if (lower.includes("grant") || lower.includes("award")) {
     return {
       label: "award",
-      className:
-        "bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300",
+      className: "bg-bg-3 text-ink-2",
     };
   }
   if (lower.includes("working") || lower.includes("role")) {
     return {
       label: "career",
-      className:
-        "bg-emerald-50 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300",
+      className: "bg-bg-3 text-ink-2",
     };
   }
   if (lower.includes("talk") || lower.includes("presentation")) {
     return {
       label: "talk",
-      className: "bg-pink-50 text-pink-800 dark:bg-pink-950 dark:text-pink-300",
+      className: "bg-bg-3 text-ink-2",
     };
   }
 

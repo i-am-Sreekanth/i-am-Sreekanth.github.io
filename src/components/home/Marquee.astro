@@ -1,0 +1,22 @@
+---
+import cv from "@/data/cv.json";
+const skills = cv.skills
+  .flatMap((s: { items: string }) => s.items.split(/,\s*(?![^()]*\))/))
+  .map((x: string) => x.replace(/\s*\(.*\)/, "").trim())
+  .filter(Boolean);
+const loop = [...skills, ...skills];
+---
+
+<div
+  class="marquee border-rule -mx-[clamp(20px,4vw,36px)] mb-16 overflow-hidden border-y py-4"
+  aria-label="Skills"
+>
+  <div class="marquee-track flex w-max gap-10 whitespace-nowrap">
+    {loop.map((s: string) => (
+      <span class="text-ink-3 font-serif text-[22px] font-semibold tracking-tight">
+        {s}
+        <span class="grad-text ml-10">✦</span>
+      </span>
+    ))}
+  </div>
+</div>

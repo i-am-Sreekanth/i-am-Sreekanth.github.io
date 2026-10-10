@@ -4,14 +4,14 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.mirsazzathossain.me" }],
-      "destination": "https://mirsazzathossain.me/:path*",
+      "has": [{ "type": "host", "value": "www.bysreekanth.dev" }],
+      "destination": "https://bysreekanth.dev/:path*",
       "permanent": true
     },
     {
       "source": "/:path*",
       "has": [{ "type": "header", "key": "x-forwarded-proto", "value": "http" }],
-      "destination": "https://mirsazzathossain.me/:path*",
+      "destination": "https://bysreekanth.dev/:path*",
       "permanent": true
     }
   ],
@@ -19,7 +19,10 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },

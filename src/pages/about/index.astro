@@ -1,5 +1,7 @@
 ---
 import AboutPage from "@/components/about/AboutPage";
+import ActivitySection from "@/components/activity/ActivitySection.astro";
+import LocationCard from "@/components/activity/LocationCard.astro";
 import Layout from "@/layouts/Layout.astro";
 import { readSiteJson } from "@/utils/json-data";
 
@@ -17,7 +19,7 @@ const timeline = await readSiteJson("news.json");
 <Layout
   title="About"
   name={about.name}
-  description={`About ${about.name} — Junior Research Scientist at CCDS, Independent University, Bangladesh. Research in computer vision, domain adaptation, and vision-language models.`}
+  description={`About ${about.name} — ${about.designation} at ${about.company.name}. Interested in machine learning, NLP and full-stack development.`}
 >
   <AboutPage
     about={about}
@@ -29,5 +31,23 @@ const timeline = await readSiteJson("news.json");
     press={press}
     availability={availability}
     timeline={timeline}
-  />
+  >
+    <h2 class="font-mono text-[11px] tracking-[0.16em] uppercase text-ink-3 pb-2 border-b border-rule mb-4 mt-[30px]">
+      Coding Activity
+    </h2>
+    <ActivitySection />
+    {about.location?.name && (
+      <>
+        <h2 class="font-mono text-[11px] tracking-[0.16em] uppercase text-ink-3 pb-2 border-b border-rule mb-4 mt-[30px]">
+          Based In
+        </h2>
+        <LocationCard
+          name={about.location.name}
+          url={about.location.url}
+          lat={13.0827}
+          lon={80.2707}
+        />
+      </>
+    )}
+  </AboutPage>
 </Layout>

@@ -731,3 +731,39 @@ export function ScopusIcon(props: SvgProps) {
     </svg>
   );
 }
+
+export function KaggleIcon(props: SvgProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M6 3v18" />
+      <path d="M18 3 8.5 13.5 18 21" />
+    </svg>
+  );
+}
+
+export function LeetCodeIcon(props: SvgProps) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="m15 4-9 9a3 3 0 0 0 0 4l2 2a3 3 0 0 0 4 0l3-3" />
+      <path d="M14 11h7" />
+    </svg>
+  );
+}

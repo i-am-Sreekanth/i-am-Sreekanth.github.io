@@ -4,17 +4,11 @@ export function OrgLogo({ name }: { name: string }) {
   const logo = getOrgLogo(name);
 
   return (
-    <div className="w-11 h-11 rounded-[6px] bg-bg-2 border border-rule flex items-center justify-center shrink-0 overflow-hidden">
+    <div className="border-rule flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-[6px] border bg-white">
       {logo.kind === "img" ? (
-        <img
-          src={logo.src}
-          alt={logo.alt}
-          className="w-full h-full object-contain p-1"
-        />
+        <img src={logo.src} alt={logo.alt} className="h-full w-full object-contain p-0.5" />
       ) : (
-        <span className="font-serif text-[14px] font-bold text-ink-2">
-          {logo.label}
-        </span>
+        <span className="text-ink-2 font-serif text-[14px] font-bold">{logo.label}</span>
       )}
     </div>
   );

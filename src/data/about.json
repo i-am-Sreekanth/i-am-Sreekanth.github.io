@@ -1,70 +1,50 @@
 {
-  "name": "Mir Sazzat Hossain",
-  "photo": "/images/user.webp",
-  "designation": "Research Assistant",
+  "name": "Sreekanth Radhakrishnan",
+  "photo": "/images/me.jpeg",
+  "designation": "B.Tech Student",
   "company": {
-    "name": "Independent University, Bangladesh",
-    "url": "https://iub.ac.bd/",
-    "department": {
-      "name": "Center for Computational & Data Sciences",
-      "url": "https://ccds.ai/"
-    }
+    "name": "VIT Vellore",
+    "url": "https://vit.ac.in/"
   },
-  "researchInterests": [
-    "Multimodal Learning",
-    "Domain Adaptation",
-    "CUAs",
-    "Vision-Language Models",
-    "Federated Learning"
-  ],
-  "description": "A highly motivated and aspiring researcher with a strong background in deep learning, with recent work centered on multimodal learning. Over the past few years, I have actively contributed to the field, publishing research articles in top-tier venues such as ACL and WACV. My primary research interests lie in vision-language models. I have also worked on domain adaptation and federated learning, and continue to explore these areas with strong interest.\n\nCurrently, I am working as a Research Assistant at the Center for Computational & Data Sciences (CCDS) at Independent University, Bangladesh. My recent work explores multimodal alignment, efficient adaptation, and generative approaches, including diffusion models and constrained generation. I am actively seeking Ph.D. opportunities in Computer Science, with an emphasis on vision-language models, domain adaptation, and generative models.",
+  "description": "I'm a final-year Computer and Business Systems student at VIT Vellore, based in Chennai. The part of software I find most absorbing is the gap between a promising model and something people can rely on every day: the data wrangling, the safeguards, and the interfaces wrapped around it.\n\nThis summer I joined Xmplar as an Applied AI intern, where I worked on matching up financial records scattered across ERP exports and spreadsheets. We paired embeddings and language models with strict rule-based checks, so every match could be explained and verified. Before that I spent a summer at Adiyen Technologies on the product side, building live, multi-user Angular features backed by AWS serverless services.\n\nNLP and retrieval are where I want to go deeper. I keep my problem-solving sharp on LeetCode, explore datasets on Kaggle, and unwind with a camera or a good pair of headphones. I'm currently looking for internships and full-time roles building applied AI products.",
   "academicLinks": [
     {
-      "name": "google-scholar",
-      "url": "https://scholar.google.com/citations?user=HriPgEQAAAAJ"
-    },
-    {
-      "name": "semantic-scholar",
-      "url": "https://www.semanticscholar.org/author/Mir-Sazzat-Hossain/2220031205"
-    },
-    {
-      "name": "dblp",
-      "url": "https://dblp.org/pid/349/0737.html"
-    },
-    {
-      "name": "acl",
-      "url": "https://aclanthology.org/people/mir-sazzat-hossain/"
-    },
-    {
-      "name": "openreview",
-      "url": "https://openreview.net/profile?id=~Mir_Sazzat_Hossain1"
-    },
-    {
-      "name": "scopus",
-      "url": "https://www.scopus.com/authid/detail.uri?authorId=58417735100"
-    },
-    {
       "name": "github",
-      "url": "https://github.com/mirsazzathossain"
+      "url": "https://github.com/i-am-Sreekanth"
+    },
+    {
+      "name": "linkedin",
+      "url": "https://www.linkedin.com/in/sreekanth-radhakrishnan-449570281/"
+    },
+    {
+      "name": "kaggle",
+      "url": "https://www.kaggle.com/skanthkaggle"
+    },
+    {
+      "name": "leetcode",
+      "url": "https://leetcode.com/u/SreekanthR0952/"
     }
   ],
   "socialLinks": [
     {
       "name": "linkedin",
-      "url": "https://www.linkedin.com/in/mirsazzathossain/",
-      "username": "mirsazzathossain"
+      "url": "https://www.linkedin.com/in/sreekanth-radhakrishnan-449570281/",
+      "username": "sreekanth-radhakrishnan"
     },
     {
-      "name": "discord",
-      "url": "https://discord.gg/M7Jjv9hr",
-      "username": "mirsazzathossain"
+      "name": "github",
+      "url": "https://github.com/i-am-Sreekanth",
+      "username": "i-am-Sreekanth"
     }
   ],
-  "resume": "files/mirsazzathossain-cv.pdf",
-  "availability": "Applying for Fall 2027 PhD",
+  "resume": "/files/Sreekanth_Radhakrishnan_Resume.pdf",
   "location": {
-    "name": "Dhaka, Bangladesh",
-    "url": "https://www.google.com/maps/place/Dhaka/@23.7810672,90.2548772,11z/"
+    "name": "Chennai, Tamil Nadu, India",
+    "url": "https://maps.app.goo.gl/vHGZZZHoznHVbBc47?g_st=ac"
   },
-  "email": "mirsazzathossain@gmail.com"
+  "email": "sree2005kanth@gmail.com",
+  "shortBio": "Final-year B.Tech student at VIT Vellore who enjoys turning messy, real-world data into tools people can trust. Recently that has meant LLM-backed reconciliation for finance teams and real-time web apps on AWS.",
+  "openTo": ["Open to internships", "Open to full-time roles"],
+  "academicInterests": ["Data Analysis", "Machine Learning", "Data Science"],
+  "interests": ["Tech", "Photography", "Music"]
 }

@@ -59,6 +59,9 @@ declare type Project = {
   type?: string;
   glyph?: string;
   stars?: number;
+  repo?: string;
+  featured?: boolean;
+  highlights?: string[];
   tags?: string[];
   language?: string;
   link: {
