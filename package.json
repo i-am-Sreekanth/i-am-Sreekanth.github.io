@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@astrojs/prism": "^4.0.2",
-    "@astrojs/react": "^7.0.0",
+    "@astrojs/react": "^7.0.1",
     "@astrojs/sitemap": "^3.7.4",
     "@astrojs/vercel": "^11.0.11",
     "@tailwindcss/typography": "^0.5.20",
