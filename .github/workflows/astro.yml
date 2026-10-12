@@ -37,17 +37,15 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: ${{ env.BUILD_PATH }}
 
       - name: Build with Astro
         run: npx --no-install astro build --site "${{ steps.pages.outputs.origin }}" --base "${{ steps.pages.outputs.base_path }}"
-        working-directory: ${{ env.BUILD_PATH }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           name: astro-pages
-          path: ${{ env.BUILD_PATH }}/dist
+          path: dist
 
   deploy:
     name: Deploy
