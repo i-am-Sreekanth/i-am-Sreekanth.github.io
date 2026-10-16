@@ -34,7 +34,7 @@
     "@astrojs/prism": "^4.0.2",
     "@astrojs/react": "^7.0.0",
     "@astrojs/sitemap": "^3.7.4",
-    "@astrojs/vercel": "^11.0.11",
+    "@astrojs/vercel": "^11.0.14",
     "@tailwindcss/typography": "^0.5.20",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
