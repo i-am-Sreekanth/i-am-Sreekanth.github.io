@@ -31,7 +31,7 @@
     ]
   },
   "dependencies": {
-    "@astrojs/prism": "^4.0.2",
+    "@astrojs/prism": "^4.1.0",
     "@astrojs/react": "^7.0.0",
     "@astrojs/sitemap": "^3.7.4",
     "@astrojs/vercel": "^11.0.11",
